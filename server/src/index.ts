@@ -10,16 +10,8 @@ const createServer = async () => {
   await app.register(middie);
   app.use(cors());
 
-  console.log(routes);
-
   Object.entries(routes).forEach(([route, handler]) => {
     app.register(handler, { prefix: route });
-
-    app.register(async (app, opts, done) => {})
-  });
-
-  app.get("/", async (req, res) => {
-    res.send("Hello World!");
   });
 
   app.listen({ port: 3001, host: "0.0.0.0" }, function (err, address) {
