@@ -9,7 +9,7 @@ export default (
   done: (err?: Error | undefined) => void
 ) => {
   app.get("/", async (req, res) => {
-    return "hello world users";
+    return [];
   });
 
   app.post("/", async (req, res) => {

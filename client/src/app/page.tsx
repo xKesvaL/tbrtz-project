@@ -1,15 +1,6 @@
 import Image from "next/image";
 
-export default async function Home() {
-  const data = await fetch("http://127.0.0.1:3001/users/list", {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
-
-  const json = await data.json();
-
+export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
@@ -33,7 +24,6 @@ export default async function Home() {
               height={24}
               priority
             />
-            {json.coucou}
           </a>
         </div>
       </div>
